@@ -87,7 +87,7 @@ input:hover{
 
 .toolbar
 {
-    position: fixed;
+    position:relative;
     top:0;
     left:0;
     background-color: #641E16    ;
