@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,10 +10,51 @@
             @import url('https://fonts.googleapis.com/css?family=Cabin+Condensed');
         </style>
     </head>
+    
     <body>
         <div class="toolbar">
+            <div id="welcome">
+                Welcome, 'username'
+            </div>
             <h1> Website Name</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="" >Home</a>
+                    </li>
+                    <li id="current">
+                        <a href="" >Dashboard</a>
+                    </li>
+                    <li style="float:right; margin-right:10px;"> <!--Sign out appears at the right end-->
+                        <a href="" >Sign Out</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+<!-- UERS STATS-->
+        <div id="userstats">
+            <ul>
+                <li>
+                    Name
+                </li>
+                <li>
+                    College
+                </li>
+                <li>
+                    Semester
+                </li>
+                <li>
+                    Branch
+                </li>
+                <li>
+                    Number of courses taken
+                </li>
+                <li>
+                    Number of courses completed
+                </li>
+            </ul>
+        </div>
+<!-- COURSES TAKEN-->
         <div class="c_taken">
             <h2>
                 Courses Taken
@@ -51,5 +93,6 @@
                 </li>
             </ul>
         </div>
+
     </body>
 </html>
