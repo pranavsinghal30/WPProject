@@ -87,9 +87,13 @@ body{
     bottom:5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+#search #sec{
+    width: 80px;
+}
 #search input:hover{
     border: 1.5px solid #05C884;
 }
+
 /* ### SEARCH BOX ends ###*/
 
 .out{
