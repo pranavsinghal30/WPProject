@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin+Condensed');
+
+body{
+    font-family: 'Cabin Condensed', sans-serif;
+    color: black /*transparent*/;
+    background-image: url("cyan.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size:2em;
+}    
+
+/* ### TOOLBAR is the header ### */
+.toolbar h1{
+    text-align: center;
+    font-size: 2em;   
+}
+
+.toolbar
+{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 2;
+    opacity:1;
+    height:20% /*30%*/;
+    min-height: 160px;
+    background-color: #05C884;
+    width: 100%;
+    color: #FFFFFE;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    line-height: 1em;
+}
+
+.toolbar #welcome{
+    position: fixed;
+    z-index: 3;
+    top:10px;
+    left:8px;
+}
+
+.toolbar nav ul{
+    list-style-type: none;
+}
+
+.toolbar nav li{
+    float:left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding:5px;
+    width: 150px;
+    /*border: 1px solid black;
+    /*display: block;*/
+    text-align: center;
+    margin-left:2px;
+    background-color: aquamarine;
+}
+.toolbar nav li a{
+    text-decoration: none;
+    /*border:1px solid green;*/
+    display: block;
+    width:100%;
+    color:black;
+}
+.toolbar nav li:hover{
+    background-color: #05C884;
+}
+.toolbar #current{
+    background-color: #47F0B5;
+    box-shadow:0;
+}
+
+/* ### TOOLBAR ends here ### */
+
+/* USERSTATS is the box on the side ### */
+#userstats{
+    /*text-align: center;*/
+    position: fixed;
+    top: 200px;
+    left:50px;
+    width: 20%;
+    height:500px;
+    font-size:.8em;
+    color:#0E110F;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #05C884;
+    opacity: 0.9;
+}
+#userstats ul{
+    margin-left: -35px;
+    list-style-type: none;
+}
+#userstats li{
+    line-height: 1.7em;
+}
+#userstats li:hover{
+    color:black;
+}
+/* ### USERSTATS ends here ### */
+
+/* ### COURSES TAKEN by the user ### */
+.c_taken{
+    margin-left:15%;
+    margin-top:15%;
+    color:#05C884;
+    /*padding-top: 10%;*/
+}
+
+.c_taken>h2{
+    padding-left: 15%;
+    /*text-align: ;*/
+    font-size: 1.5em;   
+    color: black;
+    /*position: relative;
+    top: 40px;*/
+}
+
+.c_taken ul{
+    margin-left:10%;
+    margin-right: 10%;
+    /*font-size: ;
+    /*border: solid black 1px;*/
+    height: 200px;
+    list-style-type: none;
+}
+.c_taken li{
+    background-color: white;
+    opacity:.7;
+    width: 15%;
+    min-width: 150px;
+    text-align: center;
+    /*margin-left: 10%;*/
+    padding: 5%;
+    margin: 3%  2% ;
+    /*width:100%;*/
+    float:left;   
+    height: 6em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*min-block-size: 6em;*/
+}
+.c_taken li:hover{
+    opacity:1;
+}
+/* ### COURSES TAKEN ends here ### */
