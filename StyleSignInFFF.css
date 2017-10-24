@@ -81,7 +81,8 @@ li{
     /*width:100%;*/   
 }
 
-input{
+.right input{
+    
     width: 50%;
     text-align: center;
     font-style: italic;

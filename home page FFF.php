@@ -1,3 +1,6 @@
+<?php
+    $db= mysql_connect("localhost","root","","project1");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +17,20 @@
     <body>
             <div class="toolbar">
                 <div id="welcome">
-                    Welcome, 'username'
+                    <?php
+                         $una=$_GET['uname'];
+                         //$db= mysql_connect("localhost","root","","project1");
+                         $query="SELECT Name FROM `project1`.`userprofile1` WHERE UserName='$una'";
+                         $result=mysql_query($query);
+                         if(!$result)
+                         {
+                             print "oops";
+                             exit;
+                         }
+                         $row=mysql_fetch_assoc($result);
+                         $name=$row['Name'];
+                         echo "Welcome, ".$name;
+                    ?>
                 </div>
                 <h1>
                     Website Name
@@ -22,10 +38,20 @@
                 <nav>
                     <ul>
                         <li id="current">
-                            <a href="" >Home</a>
+                            <?php
+                            echo "<a href='home page FFF.php?uname=$una' >";
+                            echo "Home";
+                            ?>
+                            </a>
+                            <!--a href="c:\xampp\htdocs\Project\home page FFF.html" >Home</a-->
                         </li>
                         <li>
-                            <a href="" >Dashboard</a>
+                            <?php
+                            echo "<a href='UserPage FFF.php?uname=$una' >";
+                            echo "Dashboard";
+                            ?>
+                            </a>
+                            <!--a href="c:\xampp\htdocs\Project\UserPage FFF.html" >Dashboard</a-->
                         </li>
                         <li style="float:right; margin-right:10px;">
                             <a href="" >Sign Out</a>

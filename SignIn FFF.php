@@ -21,11 +21,32 @@
         </div>
         <div class="right all">
             
-            <form action="" method="POST">
-                <p class="signin">
+            <form id="f1" action="verify.php" method="POST">
+                <div>
                     <ul>
                         <li>
                             Sign In
+                        </li>
+                        <li>
+                            <input type="text" id="user_name" name="u_name" placeholder="User Name" />
+                        </li>
+                        <li>
+                            <input type="password" id="password" name="p_word" placeholder="Password" />
+                        </li>
+                        <li>
+                            <input type="submit" id="sign_in" name="s_in" value="Sign In" />
+                        </li>                    
+                    </ul>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        
+                </div>
+            </form>
+
+            <!--form id="f2" action="" method="POST">
+                <div class="signin">
+                    <ul>
+                        <li>
+                            Sign Up
                         </li>
                         <li>
                             <input type="text" placeholder="User Name" />
@@ -39,8 +60,8 @@
                     </ul>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                         
-                </p>
-            </form>
+                </div>
+            </form-->
         </div>
     </body>
 </html>
