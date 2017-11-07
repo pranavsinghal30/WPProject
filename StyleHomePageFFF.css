@@ -1,0 +1,51 @@
+/* ### SEARCH BOX ### */
+#search{
+    margin-top:18%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-size: 1.1em;
+}
+#search #sea{
+    margin-left: 30px;
+    width: 300px;
+    padding:10px;
+    position:relative;
+    bottom:5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#search input:hover{
+    border: 1.5px solid #05C884;
+}
+#sec{
+    font-size: 0.5em;
+    width: 100px;
+    position: relative;
+    left:10px;
+    top: -2px;
+    padding: 5px 10px;
+}
+/* ### SEARCH BOX ends ###*/
+
+.courses{
+    height: 100%;
+    margin: 40px;
+    color: #05C884;
+    padding-top:10px;
+}
+.cards
+{
+    float:left;
+    margin: 2%;
+    width:400px;
+    height: 10em;
+    min-height: 200px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    opacity:.7;
+    padding-top: 5%;
+}
+.cards:hover{
+    opacity:1;
+    z-index:1;
+}
