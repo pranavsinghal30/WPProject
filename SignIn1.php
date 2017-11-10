@@ -3,13 +3,12 @@
     $uname = "";
     $pword = "";
     $errorMessage = "";
-    /*$_SESSION['un']="";
-    $_SESSION['pw']="";
-    $_SESSION['wrongdata']="";
-    $_SESSION['authorize']="";*/
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        $db= mysql_connect("localhost","root","","project1");
+        //$db= mysql_connect("localhost","root","","project1");
+        
+        $db=mysql_connect("localhost","root","") or die ("error");
+        $db=mysql_select_db("project1",$db) or die ("error with project1");
         $uname=$_POST["u_name"];
         $pwrd=$_POST["p_word"];
 
@@ -20,7 +19,7 @@
         $value=$row['Password'];
         if(!$result or mysql_num_rows($result)==0 or $pwrd!=$value)
         {
-            $errorMessage = "*Incorrect username or password. Try again             ";
+            $errorMessage = "*Incorrect username or password. Try again";
             session_start();
             $_SESSION['authorize'] = 0;
         }
@@ -29,7 +28,7 @@
             session_start();
             $_SESSION['un']=$uname;
             $_SESSION['authorize'] = 1;
-            header("Location: homepage.php");
+            header("Location: homepage1.php");
         }
     }
 ?>

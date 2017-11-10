@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION['authorize']!=1)
+    if(!isset($_SESSION['authorize']) && $_SESSION['authorize']!=1)
     {
         echo "You dont have permission to view this page";
         exit;
@@ -55,7 +55,7 @@
                 <ul>
                     <li>
                         <?php
-                            echo "<a href='homepage.php'>";     //?uname=$una' >";
+                            echo "<a href='homepage1.php'>";     //?uname=$una' >";
                             echo "Home</a>";
                         ?>
                     </li>
