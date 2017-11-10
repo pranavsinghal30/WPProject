@@ -3,7 +3,6 @@
     $uname = "";
     $pword = "";
     $errorMessage = "";
-    
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         //$db= mysql_connect("localhost","root","","project1");
@@ -20,7 +19,7 @@
         $value=$row['Password'];
         if(!$result or mysql_num_rows($result)==0 or $pwrd!=$value)
         {
-            $errorMessage = "*Incorrect username or password. Try again             ";
+            $errorMessage = "*Incorrect username or password. Try again";
             session_start();
             $_SESSION['authorize'] = 0;
         }
