@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin+Condensed');
+
+body{
+    font-family: 'Cabin Condensed', sans-serif;
+    color: black /*transparent*/;
+    background-image: url("cyan.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size:2em;
+}    
+
+/* ### TOOLBAR is the header ### */
+.toolbar h1{
+    text-align: center;
+    font-size: 2em;
+    position:relative;
+    top:-20px;   
+}
+.toolbar
+{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 2;
+    opacity:1;
+    height:12% /*30%*/;
+    /*min-height: 160px;*/
+    background-color: white/* rgb(0,112,149)/*#47f0b5*/;/*#05c884*/;
+    width: 100%;
+    color:rgb(0,112,149)/*#47f0b5*//* #FFFFFE*/;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    line-height: 1em;
+}
+.toolbar #welcome{
+    position: fixed;
+    z-index: 3;
+    top:25px;
+    left:8px;
+}
+.toolbar nav ul{
+    list-style-type: none;
+}
+.toolbar nav li{
+    float:left;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+    border: 2px solid rgb(0,112,149)/*#47f0b5*/;
+    padding:5px;
+    position:relative;
+    top:-100px;
+    left:170px;
+    width: 130px;
+    text-align: center;
+    margin-left:2px;
+    background-color: white;/*aquamarine;*/
+    
+
+}
+.toolbar nav li a{
+    text-decoration: none;
+    display: block;
+    width:100%;
+    color:rgb(0,112,149)/*#47f0b5*/;
+    font-size: 0.8em;
+}
+.toolbar nav li:hover{
+    /*background-color:#fffffe/* rgb(0,112,149)/*#47f0b5*//*#05c884*/
+    /*color: white;*/
+    background-color: rgb(0,112,149)/*#47f0b5*/;
+}
+.toolbar #current{
+    background-color: #fffffe/*rgb(0,112,149)/*#47f0b5*/;
+    box-shadow:0;
+    font-style: bold;
+    border:none;
+}
+/* ### TOOLBAR ends here ### */
+.toolbar nav li a:hover{
+    border: 2px solid rgb(0,112,149)/*#47f0b5*/;
+    background-color: rgb(0,112,149)/*#47f0b5*/;
+    color: white;/*rgb(0,112,149)/*#47f0b5*//*#05c884*/
+}
+
+.toolbar #current:hover{
+    color: white /*rgb(0,112,149)*/;
+    border: 2px solid rgb(0,112,149)/*#47f0b5;*/;
+    background-color: rgb(0,112,149)/*#47f0b5;*/;
+}
+
+.comparebutton{
+    position: fixed;
+    z-index: 3;
+    color:rgb(0,112,149);
+    top:20px;
+    left:1100px;
+    padding: 7px;
+    width: 130px;
+    text-align: center;
+    margin-left:2px;
+    border: 2px solid teal;
+    background-color: white;
+    font-size:0.8em;
+}
+.comparebutton:hover{
+    color: white;
+    background-color: rgb(0,112,149);
+}
+
+
+.cardinfo{
+    position: fixed;
+    top: 100px;
+    left: 300px;
+    visibility: hidden;
+    margin: 2%;
+    width:800px;
+    height: 12em;
+    background-color: rgb(255, 255, 255);
+    color:black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*text-align: center;*/
+    opacity:1;
+    /*padding-top: 5%;*/
+    z-index: 10;
+}
