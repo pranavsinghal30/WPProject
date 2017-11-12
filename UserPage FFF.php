@@ -20,6 +20,7 @@
                 if($_SESSION['authorize']==1) echo '- '.$row['Name'];//$_SESSION['un'];
             ?>
         </title>
+
         <link rel="stylesheet" type="text/css" href="CommonStyle.css" />
         <link rel="stylesheet" type="text/css" href="StyleUserPage FFF.css" />
         <style>
@@ -36,6 +37,7 @@
     
     <body>
     
+
         <!-- Header -->
         <div class="toolbar">
             <div id="welcome">   <!-- Prints Welcome, Name  The database is selected over here-->
@@ -52,7 +54,9 @@
                     }
                     $row=mysql_fetch_assoc($result);
                     $name=$row['Name'];
+
                     echo $name;
+
                 ?>
             </div>
             <h1>
@@ -73,7 +77,9 @@
                             echo "Dashboard</a>";
                         ?>
                     </li>
+
                     <li style="float:left; position:relative;leFt:980px;">
+
                     <?php
                         echo "<a href='logout.php' >Sign Out</a>";
                     ?>
@@ -111,7 +117,7 @@
             </h2>
             <ul>
                 <?php
-                    
+
                     $query="SELECT coursedetail.CourseName,usercourses.Progress,usercourses.CourseId,coursedetail.Link FROM project1.usercourses left join project1.coursedetail on usercourses.CourseId=coursedetail.CourseId WHERE UserName='$una'";
                     $result=mysql_query($query);   //Multiple rows,  each with info about one course taken by the user
                     if(!$result)
@@ -119,12 +125,15 @@
                         echo "Result Unsuccesful";
                         exit;
                     }
+
                     $a=array();
                     $count=0;
+
                     $num_rows=mysql_num_rows($result);
                     $row=mysql_fetch_assoc($result);
                     for($i=1; $i<=$num_rows; $i++)
                     {
+
                         //echo '<a href='.$row['Link'].'>';
                         //echo "<li>".$row['CourseName']."</br>";
                         //echo "<span style='font-size:0.7em;'>".$row['Progress']."% completed</span></li>";
@@ -238,8 +247,10 @@
                             </div>
                             <input class="comparebutton" type="submit" value="Compare" />
                     </form>
+
             </ul>
         </div>
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </body>
 </html>
+

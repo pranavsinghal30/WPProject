@@ -12,9 +12,11 @@ body{
 /* ### TOOLBAR is the header ### */
 .toolbar h1{
     text-align: center;
+
     font-size: 2em;
     position:relative;
     top:-20px;   
+
 }
 .toolbar
 {
@@ -23,11 +25,13 @@ body{
     left:0;
     z-index: 2;
     opacity:1;
+
     height:12% /*30%*/;
     /*min-height: 160px;*/
     background-color: white/* rgb(0,112,149)/*#47f0b5*/;/*#05c884*/;
     width: 100%;
     color:rgb(0,112,149)/*#47f0b5*//* #FFFFFE*/;
+
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     line-height: 1em;
 }
@@ -52,8 +56,6 @@ body{
     text-align: center;
     margin-left:2px;
     background-color: white;/*aquamarine;*/
-    
-
 }
 .toolbar nav li a{
     text-decoration: none;
@@ -121,4 +123,5 @@ body{
     opacity:1;
     /*padding-top: 5%;*/
     z-index: 10;
+
 }

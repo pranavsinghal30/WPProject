@@ -5,6 +5,8 @@
         echo "You dont have permission to view this page";
         exit;
     }
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,6 +28,7 @@
             @import url('https://fonts.googleapis.com/css?family=Cabin+Condensed');
         </style>
         <script type="text/javascript" src="compare.js"></script>
+
         <!--script type="text/javascript">
             function infoo(id)
             {
@@ -33,6 +36,7 @@
                 document.getElementById(id).style.visibility="visible";
             }
         </script-->
+
     </head>
 
     <body>
@@ -51,8 +55,10 @@
                     }
                     $row=mysql_fetch_assoc($result);
                     $name=$row['Name'];
+
                     echo $name;
                     
+
                 ?>
             </div>
             <h1>
@@ -73,8 +79,10 @@
                         echo "Dashboard</a>";
                         ?>
                     </li>
+
                     <li style="float:left; position:relative; left:980px; top:-96.5px;">
                     <!--li style="position:fixed; right:0px;"-->
+
                         <?php
                             echo "<a href='logout.php' >Sign Out</a>";
                         ?>
@@ -88,11 +96,14 @@
             <form action="homepage1.php" method= "POST">
                 <p>
                     <label>
+
                         <input id="sea" name="searc" type="text" <?php if($_SERVER['REQUEST_METHOD']=='POST') echo 'value="'.$_POST["searc"].'"'; ?> />
+
                     </label>
                     <input type="submit" id="sec" value="Search" />
                     <br/>
                     <label style="font-size:0.6em;">
+
                         <input type="radio" name="filter" value="Level"id="l">Filter by Difficulty Level</input>
                     </label>
                     <label style="font-size:0.6em;">
@@ -100,6 +111,7 @@
                     </label>
                     <label style="font-size:0.6em;">
                         <input type="radio" name="filter" value="AverageRating" id="l">Filter by Average Rating</input>
+
                     </label>
                 </p>
                 <p style="font-size:0.8em; text-align:left;">
@@ -113,8 +125,10 @@
             </form>
         </div>
         
+
         </div>
         <!-- All the COurses -->
+
             <div class="courses">
                 <?php
                     $db=mysql_connect("localhost","root","") or die ("error");
@@ -198,6 +212,7 @@
                     $i=0;
                 ?>
                     <form action="comparison.php" method="POST">
+
                         <?php
                             foreach($a as $p=>$id)
                             {
@@ -287,6 +302,7 @@
                             <input class="comparebutton" type="submit" value="Compare" />
                     </form>
                         
+
                         
                 <!--div class="cards">
                       Courses 1

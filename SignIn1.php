@@ -51,6 +51,7 @@
             <br/>
         </div>
 
+
         <div class="left all">
             Have you ever searched for a course online? Then you would know that there are a hundreds of courses for hundreds of things.
             Our website does the work for you by instantly comparing multiple courses from multiple websites.
@@ -63,6 +64,7 @@
         <div class="right all">
             <!-- Sign In-->
             <form id="f1" action="SignIn1.php" method="POST" class>
+
                 <div>
                     <ul>
                         <li>
@@ -78,6 +80,7 @@
                             echo '<li style="text-align:right; font-size:.5em; color:red;">'.$errorMessage.'</li>';
                         ?>
                         <li>
+
                             <input style="opacity:1;"class="button" type="submit" id="sign_in" name="s_in" value="Sign In" />
                         </li>
                         <li>
@@ -85,6 +88,7 @@
                                 <input style="opacity:1;" class="button" type="button" id="sign_up" name="s_up" value="Sign Up" />
                             </a>
                         </li>
+
                     </ul>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                         
