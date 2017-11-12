@@ -43,18 +43,28 @@
             @import url('https://fonts.googleapis.com/css?family=Cabin+Condensed');
          </style>
     </head>
+
     <body class="login">
         <div class="toolbar">
             <br/>
             <h1> Website Name</h1>
             <br/>
         </div>
+
+
         <div class="left all">
-            About our website
+            Have you ever searched for a course online? Then you would know that there are a hundreds of courses for hundreds of things.
+            Our website does the work for you by instantly comparing multiple courses from multiple websites.
+            Just type in what you're looking for and with just a few clicks find the right course for yourself.
+            <!--
+            An easy way to choose the right online course among the hundreds.
+            Quickly select the courses to compare and find the right course for you. -->
         </div>
+        
         <div class="right all">
             <!-- Sign In-->
-            <form id="f1" action="SignIn1.php" method="POST">
+            <form id="f1" action="SignIn1.php" method="POST" class>
+
                 <div>
                     <ul>
                         <li>
@@ -70,9 +80,15 @@
                             echo '<li style="text-align:right; font-size:.5em; color:red;">'.$errorMessage.'</li>';
                         ?>
                         <li>
-                            <input type="submit" id="sign_in" name="s_in" value="Sign In" />
+
+                            <input style="opacity:1;"class="button" type="submit" id="sign_in" name="s_in" value="Sign In" />
                         </li>
-                        
+                        <li>
+                            <a href="SignUp.php">
+                                <input style="opacity:1;" class="button" type="button" id="sign_up" name="s_up" value="Sign Up" />
+                            </a>
+                        </li>
+
                     </ul>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                         

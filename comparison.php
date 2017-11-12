@@ -1,5 +1,17 @@
+
+<?php
+    session_start();
+    if(!isset($_SESSION['authorize']) && $_SESSION['authorize']!=1)
+    {
+        echo "You dont have permission to view this page";
+        exit;
+    }
+?>
+<!DOCTYPE html>
 <html>
 <head>
+      
+
      <link rel="stylesheet" type="text/css" href="comparison.css"/>
 
 </head>

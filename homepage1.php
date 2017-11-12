@@ -5,12 +5,8 @@
         echo "You dont have permission to view this page";
         exit;
     }
-    /*if($_SESSION['authorize']!=1)
-    {
-        //echo $_SESSION['un'];
-        echo "You aren't allowed here";
-        exit;
-    }*/
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,6 +28,15 @@
             @import url('https://fonts.googleapis.com/css?family=Cabin+Condensed');
         </style>
         <script type="text/javascript" src="compare.js"></script>
+
+        <!--script type="text/javascript">
+            function infoo(id)
+            {
+                //alert("b"+id);
+                document.getElementById(id).style.visibility="visible";
+            }
+        </script-->
+
     </head>
 
     <body>
@@ -50,7 +55,10 @@
                     }
                     $row=mysql_fetch_assoc($result);
                     $name=$row['Name'];
-                    echo "Welcome, ".$name;
+
+                    echo $name;
+                    
+
                 ?>
             </div>
             <h1>
@@ -71,7 +79,10 @@
                         echo "Dashboard</a>";
                         ?>
                     </li>
-                    <li style="float:right; margin-right:10px;">
+
+                    <li style="float:left; position:relative; left:980px; top:-96.5px;">
+                    <!--li style="position:fixed; right:0px;"-->
+
                         <?php
                             echo "<a href='logout.php' >Sign Out</a>";
                         ?>
@@ -85,15 +96,22 @@
             <form action="homepage1.php" method= "POST">
                 <p>
                     <label>
-                        Search: <input id="sea" name="searc" type="text" <?php if($_SERVER['REQUEST_METHOD']=='POST') echo 'value="'.$_POST["searc"].'"'; ?> />
+
+                        <input id="sea" name="searc" type="text" <?php if($_SERVER['REQUEST_METHOD']=='POST') echo 'value="'.$_POST["searc"].'"'; ?> />
+
                     </label>
                     <input type="submit" id="sec" value="Search" />
                     <br/>
                     <label style="font-size:0.6em;">
-                        <input type="radio" name="filter" value="Level"id="l">Filter by level</input>
+
+                        <input type="radio" name="filter" value="Level"id="l">Filter by Difficulty Level</input>
                     </label>
                     <label style="font-size:0.6em;">
-                        <input type="radio" name="filter" value="Duration" id="d">Filter by duration</input>
+                        <input type="radio" name="filter" value="Duration" id="d">Filter by Duration</input>
+                    </label>
+                    <label style="font-size:0.6em;">
+                        <input type="radio" name="filter" value="AverageRating" id="l">Filter by Average Rating</input>
+
                     </label>
                 </p>
                 <p style="font-size:0.8em; text-align:left;">
@@ -107,7 +125,10 @@
             </form>
         </div>
         
-        <!-- ALl the COurses -->
+
+        </div>
+        <!-- All the COurses -->
+
             <div class="courses">
                 <?php
                     $db=mysql_connect("localhost","root","") or die ("error");
@@ -191,70 +212,97 @@
                     $i=0;
                 ?>
                     <form action="comparison.php" method="POST">
-                <?php
-                    foreach($a as $p=>$id)
-                    {
-                        
-                        $query2="select * from coursedetail where CourseId='$id'";
-                        //echo $query2.'</br/>'.$qatt;
-                        $result=mysql_query($query2);
-                        $row=mysql_fetch_assoc($result);
-                        if($i==$count && $_SERVER['REQUEST_METHOD']=='POST' && $_POST['searc']!=NULL)
-                            {
-                                echo '</br/><br/><br/></br/><br/></br/></br/></br/></br/></br/></br/></br/>';
-                                echo '<h3>Related courses</h3>';
-                            }
-                        //echo '<a href='.$row['Link'].'>';
-                        
-                        echo '<div class="cards" id='.$row["CourseId"].' >';
-                        //echo "<input type='checkbox' name='selected' value='".$row['CourseId']."'/>";
-                        echo $row['CourseName'].'</br>';
-                        echo '<span style="font-size:0.7em;">'.$row['Institution'].'</br>';
-                        echo '<a href='.$row['Link'].'>';
-                        echo $row['Website'];
-                        echo '</a>';
-                        echo '</br>'.$row['Difficulty'].'</br>';
-                
-                        //echo '<input type="button" value="Add to Compare" id="'.$row["CourseId"].'" name="comp"
-                        echo '<input type="button" value="Add to Compare"  name="comp"
-                                style=" background-color: #008080;
-                                        position:absolute;
-                                        bottom: 0px;        
-                                        left: 40px;
-                                        color: white;
-                                        padding: 14px 20px;
-                                        margin: 8px 0;
-                                        border: none;
-                                        cursor: pointer;
-                                        "
-                                onclick="addtocomp('.$row["CourseId"].');"
-                            />'
-                        ?>
+
                         <?php
-                        echo '</span></div>';
-                        //echo "</input>";
-                        //echo '</a>';
-                        $i++;
-                    }
-                ?>
-                        <div style="visibility:hidden;">
-                        <input type="text" id="one" value="" name="one">
-                        <input type="text" id="two" value="" name="two">
-                        <input type="text" id="three" value="" name="three">
-                        </div>
-                        <input type="submit" value="compare" 
-                        style=" position: fixed;
-                                z-index: 3;
-                                top:140px;
-                                left:800px;
+                            foreach($a as $p=>$id)
+                            {
+                                $query2="select * from coursedetail where CourseId='$id'";
+                                $result=mysql_query($query2);
+                                $row=mysql_fetch_assoc($result);
+                                if($i==$count && $_SERVER['REQUEST_METHOD']=='POST' && $_POST['searc']!=NULL)
+                                {
+                                    echo '</br/><br/><br/></br/><br/></br/></br/></br/></br/></br/></br/></br/>';
+                                    
+                                    if($count%3!=0 && $count>3)
+                                    {
+                                        for($x=1;$x<=3-$count%3;$x++)
+                                        echo '<div style="visibility:hidden;" class="cards"></div>';
+                                    }
+                                    echo '<h3>Related courses</h3>';
+                                }
+                                $idofcard="d".$row['CourseId'];
+                                $idofbutton="b".$row['CourseId'];
+                                //echo $idofcard;
+                                echo '<div class="cards" id="'.$row["CourseId"].'"   >';
+                                echo $row['CourseName'].'</br>';
+                                echo '<span style="font-size:0.7em;">'.$row['Institution'].'</br>';
+                                echo '<a href='.$row['Link'].'>';
+                                echo $row['Website'];
+                                echo '</a>';
+                                echo '</br>'.$row['Difficulty'].'</br>';
+                                //echo '<span onclick="info(\''.$idofcard.'\');" >More Info</span>';
+                                echo '<span style="text-decoration:underline;color:teal; cursor:pointer;" onclick="infoo(\''.$idofcard.'\');">More Info</span>';
+                                echo '<input id="'.$idofbutton.' "type="button" value="Add to Compare"  name="comp"
+                                        style=" background-color: #008080;
+                                                position:absolute;
+                                                bottom: 0px;        
+                                                left: 40px;
+                                                color: white;
+                                                padding: 14px 20px;
+                                                margin: 8px 0;
+                                                border: none;
+                                                cursor: pointer;
+                                                "
+                                        onclick="addtocomp('.$row["CourseId"].');"
+                                    />';
+                                echo '</span></div>';
+                                echo ' <div class="cardinfo" id="'.$idofcard.'">
+                                        <span onclick=\'document.getElementById("'.$idofcard.'").style.visibility="hidden";\'
+                                                style="font-size:0.7em;text-decoration:underline;color:teal; cursor:pointer;position:absolute; top:5px; left:5px;"/>
+                                                Back</span>
+                                                <br/>'.$row['CourseName'].
+                                                '<br/>'.$row['Info'].'
+                                        </div>';
+                                
+                                //echo '</input>";
+                                //echo '</a>';
+                                $i++;
+                            }
+                        
+                         /* echo  '<!--Pop up detail-->
+                                <div id="cardinfo" 
+                                style="position: fixed;
+                                top: 100px;
+                                left: 300px;
+                                visibility: hidden;
+                                margin: 2%;
+                                width:800px;
+                                height: 12em;
+                                background-color: rgb(255, 255, 255);
+                                color:black;
                                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                                padding:5px;
-                                width: 150px;
                                 text-align: center;
-                                margin-left:2px;
-                                background-color: aquamarine;
-                                "/>
-                        </form>
+                                opacity:1;
+                                padding-top: 5%;
+                                z-index: 10;">
+                                    <form>
+                                        <input type="button" value="back" 
+                                            onclick="document.getElementById(\'cardinfo\').style.visibility=\'hidden\';"
+                                            style="position:absolute; top:5px; left:5px;"    
+                                        />'.$row['CourseName'].'
+                                    </form></div>'*/;
+                            ?>
+
+
+                            <div style="visibility:hidden;">
+                                <input type="text" id="one" value="" name="one">
+                                <input type="text" id="two" value="" name="two">
+                                <input type="text" id="three" value="" name="three">
+                            </div>
+                            <input class="comparebutton" type="submit" value="Compare" />
+                    </form>
+                        
+
                         
                 <!--div class="cards">
                       Courses 1
