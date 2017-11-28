@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin+Condensed');
+
+body{
+    font-family: 'Cabin Condensed', sans-serif;
+    color: black /*transparent*/;
+    background-image: url("cyan.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size:2em;
+}    
+
+/* ### TOOLBAR is the header ### */
+.toolbar h1{
+    text-align: center;
+    font-size: 2em;   
+}
+.toolbar
+{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 2;
+    opacity:1;
+    height:20% /*30%*/;
+    min-height: 160px;
+    background-color: #05C884;
+    width: 100%;
+    color: #FFFFFE;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    line-height: 1em;
+}
+.toolbar #welcome{
+    position: fixed;
+    z-index: 3;
+    top:10px;
+    left:8px;
+}
+.toolbar nav ul{
+    list-style-type: none;
+}
+.toolbar nav li{
+    float:left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding:5px;
+    width: 150px;
+    text-align: center;
+    margin-left:2px;
+    background-color: aquamarine;
+}
+.toolbar nav li a{
+    text-decoration: none;
+    display: block;
+    width:100%;
+    color:black;
+}
+.toolbar nav li:hover{
+    background-color: #05C884;
+}
+.toolbar #current{
+    background-color: #47F0B5;
+    box-shadow:0;
+}
+/* ### TOOLBAR ends here ### */
+a{
+    color: #05C884;
+}

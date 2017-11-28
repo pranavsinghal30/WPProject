@@ -1,0 +1,58 @@
+/* USERSTATS is the box on the side ### */
+#userstats{
+    position: fixed;
+    top: 200px;
+    left:50px;
+    width: 20%;
+    height:500px;
+    font-size:.8em;
+    color:#0E110F;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #05C884;
+    opacity: 0.9;
+}
+#userstats ul{
+    margin-left: -35px;
+    list-style-type: none;
+}
+#userstats li{
+    line-height: 1.7em;
+}
+#userstats li:hover{
+    color:black;
+}
+/* ### USERSTATS ends here ### */
+
+/* ### COURSES TAKEN by the user ### */
+.c_taken{
+    margin-left:15%;
+    margin-top:15%;
+    color:#05C884;
+}
+.c_taken>h2{
+    padding-left: 15%;
+    font-size: 1.5em;   
+    color: black;
+}
+.c_taken ul{
+    margin-left:10%;
+    margin-right: 10%;
+    height: 200px;
+    list-style-type: none;
+}
+.c_taken li{
+    float:left;
+    margin: 3%  2% ;
+    width: 15%;
+    height: 6em;
+    min-width: 150px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    opacity:.7;
+    padding: 5%;
+}
+.c_taken li:hover{
+    opacity:1;
+}
+/* ### COURSES TAKEN ends here ### */
